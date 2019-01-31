@@ -2,14 +2,11 @@ import re
 import argparse
 
 
-def is_number(val):
-    return isinstance(val, int) or isinstance(val, float)
-
-
 def format_price(price):
     price_precision = 2
+
     try:
-        price = price if is_number(price) else float(str(price))
+        price = float(str(price))
     except ValueError:
         return None
 
@@ -23,6 +20,6 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(
         description='Price formatter'
     )
-    parser.add_argument('price', help="Price to format", type=float)
+    parser.add_argument('price', help='Price to format', type=float)
     args = parser.parse_args()
     print(format_price(args.price))
