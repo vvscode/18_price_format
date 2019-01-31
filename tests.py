@@ -1,6 +1,7 @@
 import unittest
 from format_price import format_price
 
+
 class TestFormatPrice(unittest.TestCase):
 
     def test_valid_string_input(self):
@@ -37,6 +38,7 @@ class TestFormatPrice(unittest.TestCase):
         self.assertEqual(format_price([]), None)
         self.assertEqual(format_price(format_price), None)
         self.assertEqual(format_price(format_price(None)), None)
+
 
 if __name__ == '__main__':
     unittest.main()
